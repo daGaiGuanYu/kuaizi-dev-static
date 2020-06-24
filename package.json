@@ -1,0 +1,23 @@
+{
+  "name": "kuaizi-dev-static",
+  "version": "1.0.0",
+  "description": "测试环境下的 http downloader",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daGaiGuanYu/kuaizi-dev-download.git"
+  },
+  "keywords": [
+    "筷子",
+    "kuaizi"
+  ],
+  "author": "gy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daGaiGuanYu/kuaizi-dev-download/issues"
+  },
+  "homepage": "https://github.com/daGaiGuanYu/kuaizi-dev-download#readme"
+}

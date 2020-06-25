@@ -2,10 +2,10 @@ const Path = require('path')
 const { HandleRequest, Constant, Server } = require('kuaizi')
 const writeStaticFile = require('../../src/index')
 
+const position = Path.join(__dirname, './static')
+
 HandleRequest.get('/static', ctx => {
-  const notFound = writeStaticFile(ctx.req, ctx.res, Path.join(__dirname, './static'))
-  if(notFound)
-    return 404
+  writeStaticFile(ctx.req, ctx.res, position)
   return Constant.Nothing
 })
 

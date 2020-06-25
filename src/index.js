@@ -12,7 +12,9 @@ const FS = require('fs')
 module.exports = function(req, res, dir){
   const filename = Url.parse(req.url).query
   const path = Path.join(dir, filename)
-  if(!FS.existsSync(path))
-    return true // 真，代表错误
-  return FS.createReadStream(path).pipe(res)
+  if(!FS.existsSync(path)){
+    res.statusCode = 404
+    res.end('404 not found')
+  } else
+    return FS.createReadStream(path).pipe(res)
 }

@@ -5,3 +5,33 @@
 本项目为筷子提供一个**测试用的**静态文件下载功能
 
 请不要在生产项目中使用（不安全、性能低、功能少）
+
+## 在筷子中的应用
+```javascript
+const Path = require('path')
+const { HandleRequest, Constant, Server } = require('kuaizi')
+const writeStaticFile = require('kuaizi-dev-static')
+
+const position = Path.join(__dirname, './static')
+
+HandleRequest.get('/static', ctx => {
+  writeStaticFile(ctx.req, ctx.res, position)
+  return Constant.Nothing // 这个一定不要漏
+})
+
+Server.start()
+```
+
+## 在原生应用中
+```javascript
+const Http = require('http')
+const Path = require('path')
+const writeStaticFile = require('kuaizi-dev-static')
+
+const position = Path.join(__dirname, './static')
+
+const server = Http.createServer( (req, res) => {
+  writeStaticFile(req, res, position)
+})
+server.listen(8080)
+```

@@ -1,6 +1,6 @@
 {
   "name": "kuaizi-dev-static",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "测试环境下的 http downloader",
   "main": "src/index.js",
   "scripts": {
